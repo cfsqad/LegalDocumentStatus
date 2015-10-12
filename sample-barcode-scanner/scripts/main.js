@@ -38,7 +38,12 @@ App.prototype = {
                 }, 
                 function(error) {
                     console.log("Scanning failed: " + error);
-                });
+                },
+				// options object
+    			{
+        			"preferFrontCamera" : false,
+        			"showFlipCameraButton" : true
+    			});
         }
     },
 
