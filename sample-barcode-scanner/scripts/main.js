@@ -26,33 +26,7 @@ App.prototype = {
     
     _scan: function() {
         var that = this;
-        if (window.navigator.simulator === true) {    
-            var attributes = {
-                "Recipients": [
-                    "r3c@qad.com",
-                    "cfs@qad.com"
-                ],
-                "Context": {
-                    "LDNumber": "999999999999"
-                }
-            };            
-            
-            $.ajax({
-                type: "POST",
-                url: 'http://api.everlive.com/v1/Metadata/Applications/GmDv3k6UQsrnHvq2/EmailTemplates/dde2b7d0-71f4-11e5-ae63-a5b944c54feb/send',
-                contentType: "application/json",
-                headers: {
-                    "Authorization": "Masterkey itFsrDpZa8V0Z0wMQJrUjcLgRzFVSBIz"
-                },
-                data: JSON.stringify(attributes),
-                success: function(data) {
-                    alert("Email successfully sent.");
-                },
-                error: function(error) {
-                    alert(JSON.stringify(error));
-                }
-            });
-            			            
+        if (window.navigator.simulator === true) {                			            
             alert("Not Supported in Simulator.");
         }
         else {
@@ -114,10 +88,50 @@ App.prototype = {
             //Ask user if wants to send e-mail to Supplier
             if (confirm("The Legal Document Number " + ldnumber + " is " + status + ". Notify Supplier?")){
                 alert(status);
+               var attributes = {
+                    "Recipients": [
+                        "r3c@qad.com",
+                        "cfs@qad.com"
+                    ],
+                    "Context": {
+                        "LDNumber": ldnumber
+                    }
+                };            
+                
                 //Send e-mail         
-                if (status == "authorized"){          
+                if (status == "authorized"){      
+                    $.ajax({
+                        type: "POST",
+                        url: 'http://api.everlive.com/v1/Metadata/Applications/GmDv3k6UQsrnHvq2/EmailTemplates/dde2b7d0-71f4-11e5-ae63-a5b944c54feb/send',
+                        contentType: "application/json",
+                        headers: {
+                            "Authorization": "Masterkey itFsrDpZa8V0Z0wMQJrUjcLgRzFVSBIz"
+                        },
+                        data: JSON.stringify(attributes),
+                        success: function(data) {
+                            alert("Email successfully sent.");
+                        },
+                        error: function(error) {
+                            alert(JSON.stringify(error));
+                        }
+                    });                    
                 }
-                else {
+                else {      
+                    $.ajax({
+                        type: "POST",
+                        url: 'http://api.everlive.com/v1/Metadata/Applications/GmDv3k6UQsrnHvq2/EmailTemplates/03b68e50-71f5-11e5-9c22-e7bf3c0cfb38/send',
+                        contentType: "application/json",
+                        headers: {
+                            "Authorization": "Masterkey itFsrDpZa8V0Z0wMQJrUjcLgRzFVSBIz"
+                        },
+                        data: JSON.stringify(attributes),
+                        success: function(data) {
+                            alert("Email successfully sent.");
+                        },
+                        error: function(error) {
+                            alert(JSON.stringify(error));
+                        }
+                    });                     
                 }                                                     
             }                     
             
