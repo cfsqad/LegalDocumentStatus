@@ -1,5 +1,6 @@
 body
 { 
+    background-color: #f4f4f4;
 	font-family: Helvetica, Arial, Segoe UI;
 	font-size: 16px;
 	margin: 0;
@@ -20,8 +21,8 @@ body
 
 .content
 {
-	padding: 20px 0px 10px 0px;
-    background-color: #f4f4f4;
+	padding: 20px 0px 10px 10px;
+    color: #333;
 }
 
 .button-div
@@ -38,6 +39,10 @@ body
 	width: 170px;
     height: 40px;
     color: #fff;    
-    font-family: Helvetica, Arial, Segoe UI;
     font-size: 14px;
+}
+
+.result-div
+{
+    padding: 20px 0px 10px 0px;
 }
