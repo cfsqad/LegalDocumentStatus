@@ -93,7 +93,7 @@ App.prototype = {
 					suggestedcontent = "The Legal Document Number " + ldnumber + " was received in our dock and will be processed";   
                 }
                 else {
-					suggestedcontent = "The Legal Document Number " + ldnumber + " is not authorized. Good will be returned.";
+					suggestedcontent = "The Legal Document Number " + ldnumber + " is not authorized. Goods will be returned.";
                 }                
             }                     
             
