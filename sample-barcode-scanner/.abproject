@@ -40,6 +40,7 @@
     "com.phonegap.plugins.barcodescanner@1.2.12",
     "org.apache.cordova.device",
     "org.apache.cordova.file",
+    "org.apache.cordova.file-transfer",
     "org.apache.cordova.splashscreen"
   ],
   "DisplayName": "NFe Key Code Inquiry",

@@ -28,7 +28,7 @@ App.prototype = {
     
     _scan: function() {
         var that = this;
-        if (window.navigator.simulator === true) {
+        if (window.navigator.simulator === true) {             
             alert("Not Supported in Simulator.");
         }
         else {
@@ -98,16 +98,51 @@ App.prototype = {
         
         filename = message + ".xml";        
         //fileSystemHelper.deleteFile(filename, that._onSuccess, that._onError);
-		fileSystemHelper.writeLine(filename, filecontent, that._onSuccess, that._onError);
+		fileSystemHelper.writeLine(filename, filecontent, that._onSuccess(filename), that._onError);
         
     },
     
-	_onSuccess: function(value) {
-		alert('done');	
+	_onSuccess: function(filename) {     
+        
+        //If file creation was succesful, then transmit file to SEFAZ
+        var that = this,
+        	options = new FileUploadOptions(),     
+            fileURI = filename,
+            filePath = "",
+			up = new FileTransfer();
+        
+		alert("File created: " + filename);          
+        
+        options.fileKey = filename;       
+        options.fileName = fileURI.substr(fileURI.lastIndexOf('/') + 1);        
+        options.mimeType = "application/xml";
+        options.params = {}; // if we need to send parameters to the server request 
+        //options.headers = {
+          //  Connection: "Close"
+        //};        
+		options.chunkedMode = false;        
+
+        up.upload(
+            fileURI,
+            encodeURI("http://www.portalfiscal.inf.br/nfe/wsdl/NfeConsulta2"),
+            that._onFileUploadSuccess,
+            that._onFileTransferFail,
+            options);           
+        
 	},
     
 	_onError: function(error) {
+        //file creation error
 		alert(error.message);
-	}    
+	}, 
     
-}
+    _onFileUploadSucces: function(){
+        alert("File sent!");
+    },
+    
+    _onFileTransferFail: function(error){
+        //file transfer error
+        alert(error.code + " " + error.source + " " + error.target);
+    }
+              
+} 
