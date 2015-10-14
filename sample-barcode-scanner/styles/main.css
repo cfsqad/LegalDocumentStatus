@@ -2,7 +2,7 @@ body
 { 
     background-color: #f4f4f4;
 	font-family: Helvetica, Arial, Segoe UI;
-	font-size: 18px;
+	font-size: 14px;
 	margin: 0;
 	padding: 0;
     height:100%;
@@ -16,6 +16,7 @@ body
     color: #fff;
 	padding: 10px 0px 10px 0px;
 	text-align: center;
+    font-size: 18px;
 }
 
 .content
@@ -76,4 +77,5 @@ body
 {
 	padding: 10px 0px 10px 0px;
 	text-align: center;
+    opacity: 0.4;
 }
