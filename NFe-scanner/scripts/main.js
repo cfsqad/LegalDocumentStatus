@@ -62,13 +62,17 @@ App.prototype = {
             ldnumber = "",
             messagetext = "",
             issuedate = "",
-        	state = "";
+        	state = "",
+            fedtaxid = "";
         
         // Display Result
         if (message.length == 44) {
             ldnumber = message.substring(25, 34) + message.substring(22, 25);
             state = "State: Sao Paulo"; /* 35 = Sao Paulo */
             issuedate = "Issue Date: " + message.substring(4, 6)  + "/20" + message.substring(2, 4);
+            fedtaxid = "Federal Tax Id: " + message.substring(6, 8) + "." + message.substring(8, 11) + "."
+                						  + message.substring(11, 14) + "/" +  message.substring(14, 18) + "-"
+                						  + message.substring(18, 20);
             
             //Check NFe Key Code status
             switch (ldnumber)
@@ -124,7 +128,8 @@ App.prototype = {
             
             message = message + "</br>" + 
                 	  state + "</br>" + 
-                	  issuedate + "</br>";
+                	  issuedate + "</br>" +
+                	  fedtaxid;
             
 			//Add result to app form
             that._addMessageToLog(message);            
