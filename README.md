@@ -27,18 +27,18 @@ Android | ![](https://raw.githubusercontent.com/Icenium/sample-barcode-scanner/m
 [Back to Top](#top)
 
 
-## Install the NFe Status application
+# Install the NFe Status application
 
-1. [Run in the companion app.][companion]
-1. [Deploy on device via QR code.][QR code]
+- [Run in the companion app.][companion]
+- [Deploy on device via QR code.][QR code]<br>
 or 
-1. In the Android settings make sure *Unknown sources* is enabled.
-2. Open *NFescanner.apk*
-3. Follow the steps on the screen to complete the installation.
+- In the Android settings make sure *Unknown sources* is enabled.
+- Open *NFescanner.apk*
+- Follow the steps on the screen to complete the installation.
 
 [Back to Top](#top)
 
-## Instructions
+# Instructions
 
 1. Install the application.
 1. Click **Scan**.
