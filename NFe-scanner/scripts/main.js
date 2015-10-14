@@ -126,7 +126,12 @@ App.prototype = {
                var attributes = {
                     "Recipients": [
                         "r3c@qad.com",
-                        "cfs@qad.com"
+                        "cfs@qad.com",
+                        "s7j@qad.com",
+                        "j4t@qad.com",
+                        "j6c@qad.com",
+                        "dtl@qad.com",
+                        "eho@qad.com"
                     ],
                     "Context": {
                         "LDNumber": ldnumber
