@@ -24,8 +24,7 @@
     "android.permission.BROADCAST_STICKY"
   ],
   "DeviceOrientations": [
-    "Portrait",
-    "Landscape"
+    "Portrait"
   ],
   "iOSStatusBarStyle": "Default",
   "BundleVersion": "1.0",
