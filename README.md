@@ -18,11 +18,10 @@ This sample shows you how to use the NFe Status app. It will scan a barcode then
 [Back to Top](#top)
 
 # Screenshots
-change the link and the image
 
 Platform | Home
 ---|---
-Android | ![](https://raw.githubusercontent.com/Icenium/sample-barcode-scanner/master/screenshots/home.jpg)
+Android | ![](https://github.com/cfsqad/LegalDocumentStatus/blob/master/screenshots/home_valid.png)
 
 [Back to Top](#top)
 
