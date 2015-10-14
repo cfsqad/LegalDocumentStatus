@@ -75,7 +75,37 @@ App.prototype = {
 					messagetext = "Legal Document Number " + ldnumber + " is valid. Notify supplier?";             		
 				break;
                     
+                case "000013060002": 
+               		status = "valid";
+                    message = "Legal Document Number " + ldnumber + " is valid.";
+					messagetext = "Legal Document Number " + ldnumber + " is valid. Notify supplier?";             		
+				break;
+                    
+                case "000013058002": 
+               		status = "valid";
+                    message = "Legal Document Number " + ldnumber + " is valid.";
+					messagetext = "Legal Document Number " + ldnumber + " is valid. Notify supplier?";             		
+				break;
+                    
                 case "000000313005":
+                	status = "invalid";
+                    message = "Legal Document Number " + ldnumber + " is invalid. Goods will be returned."; 
+                    messagetext = "Legal Document Number " + ldnumber + " is invalid. Goods will be returned. Notify supplier?";
+                break;
+                    
+                case "000013054002":
+                	status = "invalid";
+                    message = "Legal Document Number " + ldnumber + " is invalid. Goods will be returned."; 
+                    messagetext = "Legal Document Number " + ldnumber + " is invalid. Goods will be returned. Notify supplier?";
+                break;
+                    
+                case "000013055002":
+                	status = "invalid";
+                    message = "Legal Document Number " + ldnumber + " is invalid. Goods will be returned."; 
+                    messagetext = "Legal Document Number " + ldnumber + " is invalid. Goods will be returned. Notify supplier?";
+                break;
+                    
+                case "000013053002":
                 	status = "invalid";
                     message = "Legal Document Number " + ldnumber + " is invalid. Goods will be returned."; 
                     messagetext = "Legal Document Number " + ldnumber + " is invalid. Goods will be returned. Notify supplier?";
