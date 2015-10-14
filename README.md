@@ -31,6 +31,10 @@ Android | ![](https://raw.githubusercontent.com/Icenium/sample-barcode-scanner/m
 
 1. [Run in the companion app.][companion]
 1. [Deploy on device via QR code.][QR code]
+or 
+1. In the Android settings make sure *Unknown sources* is enabled.
+2. Open *NFescanner.apk*
+3. Follow the steps on the screen to complete the installation.
 
 [Back to Top](#top)
 
@@ -46,7 +50,7 @@ Android | ![](https://raw.githubusercontent.com/Icenium/sample-barcode-scanner/m
 
 # Limitations
 
-You cannot run this sample in the device simulator or iOS.
+You cannot run this application in the device simulator or iOS.
 
 [Back to Top](#top)
 
