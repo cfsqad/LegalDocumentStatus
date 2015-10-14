@@ -173,10 +173,5 @@ App.prototype = {
         } else {
             that._addMessageToLog("Incorrect code length: " + message.length);
         }
-    },
-    
-    _callbackemail: function(error, result){
-        alert('whatsuppp');        
-    }
-              
+    },                  
 } 
