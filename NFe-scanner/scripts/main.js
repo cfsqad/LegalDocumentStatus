@@ -147,7 +147,10 @@ App.prototype = {
                         "eho@qad.com"
                     ],
                     "Context": {
-                        "LDNumber": ldnumber
+                        "LDNumber": ldnumber,
+                        "State": state,
+            			"IssueDate": issuedate,
+                        "FEDTaxId": fedtaxid
                     }
                 };            
                 
