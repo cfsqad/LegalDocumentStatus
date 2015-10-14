@@ -60,11 +60,15 @@ App.prototype = {
             status = "",
             suggestedcontent = "",
             ldnumber = "",
-            messagetext = "";
+            messagetext = "",
+            issuedate = "",
+        	state = "";
         
         // Display Result
         if (message.length == 44) {
             ldnumber = message.substring(25, 34) + message.substring(22, 25);
+            state = "State: Sao Paulo"; /* 35 = Sao Paulo */
+            issuedate = "Issue Date: " + message.substring(4, 6)  + "/20" + message.substring(2, 4);
             
             //Check NFe Key Code status
             switch (ldnumber)
@@ -117,6 +121,10 @@ App.prototype = {
                 	messagetext = "Legal Document Number " + ldnumber + " is invalid. Goods will be returned. Notify supplier?";
 				break;
             }
+            
+            message = message + "</br>" + 
+                	  state + "</br>" + 
+                	  issuedate + "</br>";
             
 			//Add result to app form
             that._addMessageToLog(message);            
