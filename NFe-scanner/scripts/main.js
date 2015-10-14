@@ -126,6 +126,13 @@ App.prototype = {
 				break;
             }
             
+            if (status == "valid") {
+                message = message + " <img src='images/valid.png'>";
+            }
+            else {
+                message = message + " <img src='images/invalid.png'>";
+            }
+            
             message = message + "</br>" + 
                 	  state + "</br>" + 
                 	  issuedate + "</br>" +
