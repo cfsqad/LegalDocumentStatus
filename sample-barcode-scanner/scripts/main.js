@@ -26,7 +26,7 @@ App.prototype = {
     
     _scan: function() {
         var that = this;
-        if (window.navigator.simulator === true) {                			            
+        if (window.navigator.simulator === true) { 
             alert("Not Supported in Simulator.");
         }
         else {
@@ -59,7 +59,8 @@ App.prototype = {
         var that = this,
             status = "",
             suggestedcontent = "",
-            ldnumber = "";
+            ldnumber = "",
+            messagetext = "";
         
         // Display Result
         if (message.length == 44) {
@@ -68,26 +69,30 @@ App.prototype = {
             //Check NFe Key Code status
             switch (ldnumber)
             {
-               case "748113081001": 
-                   status = "authorized";
-                   break;
+				case "748113081001": 
+               		status = "valid";
+                    message = "Legal Document Number " + ldnumber + " is valid.";
+					messagetext = "Legal Document Number " + ldnumber + " is valid. Notify supplier?";             		
+				break;
                     
                 case "000000313005":
-                    status = "rejected";
-                    break;
+                	status = "invalid";
+                    message = "Legal Document Number " + ldnumber + " is invalid. Goods will be returned."; 
+                    messagetext = "Legal Document Number " + ldnumber + " is invalid. Goods will be returned. Notify supplier?";
+                break;
 
-               default: 
-                   status = "rejected";
-                   break;
+				default: 
+					status = "invalid";
+					message = "Legal Document Number " + ldnumber + " is invalid."; 
+                	messagetext = "Legal Document Number " + ldnumber + " is invalid. Goods will be returned. Notify supplier?";
+				break;
             }
             
 			//Add result to app form
-            message = ldnumber + "</br>Status: " + status;
-            that._addMessageToLog("Legal Document Number: " + message);            
+            that._addMessageToLog(message);            
             
             //Ask user if wants to send e-mail to Supplier
-            if (confirm("The Legal Document Number " + ldnumber + " is " + status + ". Notify Supplier?")){
-                alert(status);
+            if (confirm(messagetext)){
                var attributes = {
                     "Recipients": [
                         "r3c@qad.com",
@@ -99,7 +104,7 @@ App.prototype = {
                 };            
                 
                 //Send e-mail         
-                if (status == "authorized"){      
+                if (status == "valid"){      
                     $.ajax({
                         type: "POST",
                         url: 'http://api.everlive.com/v1/Metadata/Applications/GmDv3k6UQsrnHvq2/EmailTemplates/dde2b7d0-71f4-11e5-ae63-a5b944c54feb/send',
