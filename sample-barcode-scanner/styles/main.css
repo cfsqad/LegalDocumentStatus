@@ -71,3 +71,9 @@ body
     -ms-background-size:cover; 
     -o-background-size: cover;     
 }
+
+.nfeLogo
+{
+	padding: 10px 0px 10px 0px;
+	text-align: center;
+}
